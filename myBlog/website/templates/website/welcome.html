@@ -3,30 +3,20 @@
 
 {% block content %}
 
-
-    Hello! The current time is {{current_time}}
-    <hr>
-    There are currently {{num_posts}} posts.
-    <hr>
     {% for post in posts %}
-        <h2>{{post.title}}</h2>
-        <p>{{post.body}}</p>
 
         <div class="container">
-    
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 box-shadow">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">My Post Title</h4>
+                        <h4 class="my-0 font-weight-normal">{{post.title}}</h4>
                     </div>
-                      <div class="card-body">
-                        <p class="card-text">My text body</p>
+                    <div class="card-body">
+                        <p class="card-text">{{post.body}}</p>
                     </div>
-                </div>
-                
             </div>
     </div>
-    
+
     {% endfor %}
 
 {% endblock %}
