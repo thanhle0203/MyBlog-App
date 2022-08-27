@@ -5,7 +5,7 @@ from . import views
 # URL pattern: http://example.com/posts/...
 # URL pattern: http://example.com/posts/new
 # URL pattern: http://example.com/posts/1
-# URL pattern: http://example.com/posts/delete
+# URL pattern: http://example.com/posts/delete/4
 
 urlpatterns = [
     path('new', views.new, name='new'),
