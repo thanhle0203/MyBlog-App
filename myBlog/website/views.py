@@ -20,12 +20,3 @@ def signup(request):
 
     return render(request, "registration/signup.html", {"form": form})
 
-def new(request):
-    if request.method == "POST":
-        form = PostForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("/")
-    else:
-        form = PostForm()
-    return render(request, "posts/new.html", {"form": form})
