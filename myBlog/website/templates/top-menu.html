@@ -19,7 +19,7 @@
 
         {% if user.is_authenticated %}
             <a class="btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}">Logout</a>
-            {{ user.username }}
+            <span class="nav-item nav-link"><i class="fa fa-user"></i> {{ user.username |upper }}</span>
         {% else %}
             <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a>
         {% endif %}
