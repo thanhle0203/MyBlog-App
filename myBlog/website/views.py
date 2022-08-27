@@ -13,4 +13,19 @@ def welcome(request):
                 })
 
 def signup(request):
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+    else:
+        form = UserRegisterForm()
+        
     return render(request, "registration/signup.html")
+
+def new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    else:
+        form = PostForm()
+    return render(request, "posts/new.html", {"form": form})
