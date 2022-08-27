@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
-
 from posts.models import Post
+from .forms import UserRegisterForm
 
 # Create your views here.
 def welcome(request):
@@ -17,8 +17,8 @@ def signup(request):
         form = UserRegisterForm(request.POST)
     else:
         form = UserRegisterForm()
-        
-    return render(request, "registration/signup.html")
+
+    return render(request, "registration/signup.html", {"form": form})
 
 def new(request):
     if request.method == "POST":
