@@ -11,3 +11,6 @@ def welcome(request):
                 "posts": Post.objects.all(),
                 "num_posts": Post.objects.count(),
                 })
+
+def signup(request):
+    return render(request, "registration/signup.html")

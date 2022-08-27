@@ -21,6 +21,7 @@
             <a class="btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}">Logout</a>
             <span class="nav-item nav-link"><i class="fa fa-user"></i> {{ user.username |upper }}</span>
         {% else %}
+            <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'signup' %}">Sign Up</a>
             <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a>
         {% endif %}
         
