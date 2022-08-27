@@ -14,8 +14,16 @@
         </li>
     
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link " href="https://twitter.com/home"><i class="fa fa-twitter"></i></a>
         </li>
+
+        {% if user.is_authenticated %}
+            <a class="btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}">Logout</a>
+            {{ user.username }}
+        {% else %}
+            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a>
+        {% endif %}
+        
       </ul>
     </div>
 </nav>
