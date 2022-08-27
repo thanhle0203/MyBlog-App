@@ -21,5 +21,16 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", welcome, name='home'),
     path("posts/", include("posts.urls")),
-    
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
+
+# The urls provided by this are
+# accounts/login/ [name='login']
+# accounts/logout/ [name='logout']
+# accounts/password_change/ [name="password_change_done"]
+# accounts/password_reset/ [name="password_reset"]
+# accounts/password/done [name="password_reset_done"]
+# accounts/reset/cuidb64/<token> [name="password_reset_confirm"]
+# accounts/password/reset/done [name="password_reset_complete"]
+
+
